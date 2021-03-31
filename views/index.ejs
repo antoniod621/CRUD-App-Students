@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Greendale Community College</title>
+  </head>
+
+  <body>
+    <h1>Greendale Student Management System</h1>
+
+    <section data-positon="add-student">
+	    <h2>Add Student</h2>
+	    <form action="/quotes" method="POST">
+	      <input type="text" placeholder="First Name" name="name" />
+	      <input type="text" placeholder="Last Name" name="quote" />
+	      <button type="submit">Submit</button>
+	    </form>
+    </section>
+
+    <section data-position="students">
+    <h2> Students </h2>
+
+	<ul class="quotes">
+	  <!-- Loop through quotes -->
+	  <% for(var i = 0; i < quotes.length; i++) {%>
+	    <li class="quote">
+	      <!-- Output name from the iterated quote object -->
+	      <span><%= quotes[i].name %></span>
+	      <!-- Output quote from the iterated quote object -->
+	      <span><%= quotes[i].quote %></span>
+	    </li>
+	  <% } %>
+	</ul>
+	</section>
+
+	<section data-position="update-student">
+		<div>
+	 		<h2>Update Student</h2>
+			<p>
+	    		Update the name of a given student
+	  		</p>
+	  		<form action="/quotes" method="PUT">
+	  			<input type="text" placeholder = "Old First Name" name="name" />
+	  			<input type="text" placeholder = "Old Last Name" name="quote" />
+	  			<input type="text" placeholder = "New First Name" name="name" />
+	  			<input type="text" placeholder = "New Last Name" name="quote" />
+	  			<button type="update-button">Update</button>
+	  		</form>
+		</div>
+	</section>
+
+	<section data-position="delete-student">
+		<div>
+			<h2>Delete Student</h2>
+		  	<p>
+		    Delete first instance of a given student in the database. Does nothing if there are no students of a given name.
+		 	 </p>
+	  		<form action "/quotes method="DELETE">
+	  			<input type="text" placeholder = "First Name" name="name" />
+	  			<input type="text" placeholder = "Last Name" name="quote" />
+	  			<button type="delete-button">Delete</button>
+	  		</form>
+		</div>
+		<div id="message"></div
+	</section>
+
+	<script src="/main.js"></script>
+  </body>
+</html>
